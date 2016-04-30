@@ -58,6 +58,10 @@ body {
 	margin: 0;
 }
 
+html, body {
+	height: 100%;
+}
+
 article,
 aside,
 details,
@@ -111,11 +115,6 @@ strong {
 
 dfn {
 	font-style: italic;
-}
-
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
 }
 
 mark {
@@ -269,7 +268,7 @@ select,
 textarea {
 	color: #404040;
 	font-size: 16px;
-	font-size: 1rem;
+	font-size: 1em;
 	line-height: 1.5;
 }
 
@@ -727,13 +726,6 @@ a:active {
 	padding: 0;
 }
 
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-	max-width: 100%;
-}
-
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
@@ -810,16 +802,21 @@ object {
 ## CSSSSSS
 --------------------------------------------------------------*/
 
+img, object, embed, canvas, video, audio, picture {
+       max-width: 100%;
+       height: auto;
+}
+
+html, body {
+	min-height: 100%;
+}
+
 body {
 	background: white;
 }
 
-#page {
-	min-width: 1280px;
-}
-
 .container-inner {
-	max-width: 1280px;
+	width: 80%;
 	margin: 0 auto;
 }
 
@@ -832,12 +829,44 @@ body {
 }
 
 #primary {
-	width: 80%;
+	width: 70%;
 }
 
 #secondary {
-	width: 20%;
-	background: yellow;
+	width: 30%;
+	background: #E6E6E6;
+	padding: 1rem;
+}
+
+#secondary .widget-title {
+	text-transform: uppercase;
+	font-size: 1em;
+	color: #90A4AE;
+	text-align: center;
+	border-bottom: 1px solid #90A4AE;
+	margin: 0;
+	padding: 1rem;
+}
+
+#secondary .widget {
+	background: white;
+	border: 1px solid #90A4AE;
+	padding: 1rem;
+}
+
+#secondary .widget ul {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	margin: 1rem 0;
+	padding: 0;
+	text-align: justify;
+}
+
+#secondary .widget ul li a {
+	text-decoration: none;
+	color: #DE4B3D;
+	
 }
 
 #masthead {
@@ -865,41 +894,34 @@ body {
 	justify-content: center;
 	list-style: none;
 	margin: 0;
+	font-size: 0.9em;
 }
 
 #primary-menu li {
-	padding: 0.9em 1.1em;
+	padding: 0.9rem 1.1rem;
 }
 
 #primary-menu li a {
 	text-decoration: none;
 	text-transform: uppercase;
-	font-size: 0.9em;
+	
 	font-weight: 500;
 	color: white;
-}
-
-@media screen and (max-width: 1280px) {
-	#primary-menu {
-		justify-content: flex-start;
-	}
 }
 
 .single-post-full .entry-title {
 	font-family: Roboto Slab;
 	text-align: center;
-	font-size: 3em;
+	font-size: 2.4em;
 	margin: 0;
 }
 
 .single-post-full {
-	width: 100% !important;
 	margin-top: -4em;
-	border: 1px solid #F2F2F2;
 }
 
-.single-post-full .entry-content {
-	background: #F2F2F2;
+.single-post-full article {
+	padding: 1rem;
 }
 
 .entry-meta .avatar {
@@ -908,7 +930,64 @@ body {
 }
 
 .content-background {
-	height: 18em;
+	height: 15rem;
 	background-position: center center !important;
 	background-size: cover !important;
+}
+
+.entry-meta {
+	text-align: center;
+	color: #595959;
+	font-family: Roboto Slab;
+	font-size: 1em;
+}
+
+.entry-meta .byline a {
+	color: #DE4B3D;
+	text-decoration: none;
+}
+
+.edit-link a {
+	text-decoration: none;
+	font-family: Roboto;
+	color: #0A324A;
+}
+
+.entry-content {
+	font-size: 1em;
+}
+
+iframe {
+	width: 100%;
+}
+
+@media (max-width: 640px) {
+  #content .container-inner {
+	flex-direction: column;
+	width: 100% !important;
+  }
+   #primary {
+	width: 100% !important;
+  }
+   #secondary {
+	width: 100% !important;
+  }
+	#primary-menu {
+		flex-direction: column;
+	}
+	.content-background {
+		height: 5rem;
+	}
+}
+
+@media (min-width: 640px) {
+
+}
+
+@media (min-width:960px) {
+
+}
+
+@media (min-width:1100px) {
+
 }
