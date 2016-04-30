@@ -1,19 +1,18 @@
 /*
-Theme Name: detendus
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
+Theme Name: wp-detendus-theme
+Theme URI: https://detendusdupad.com
+Author: voune
+Author URI: https://detendusdupad.com
 Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: detendus
-Tags:
+Text-domain: detendus
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-detendus is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+wp-detendus-theme is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -47,10 +46,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+
 html {
-	font-family: sans-serif;
+	font-family: 'Roboto';
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
+	-webkit-font-smoothing: antialiased !important;
 }
 
 body {
@@ -267,7 +268,6 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -548,120 +548,6 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-## Menus
---------------------------------------------------------------*/
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-}
-
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-
-.main-navigation li {
-	float: left;
-	position: relative;
-}
-
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
-
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 1.5em;
-	left: -999em;
-	z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
-}
-
-.main-navigation ul ul li {
-
-}
-
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
-}
-
-.main-navigation ul ul :hover > a,
-.main-navigation ul ul .focus > a {
-}
-
-.main-navigation ul ul a:hover,
-.main-navigation ul ul a.focus {
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
-
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
-}
-
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
-
-/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
@@ -775,10 +661,10 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
-.byline,
+/* .byline,
 .updated:not(.published) {
 	display: none;
-}
+} */
 
 .single .byline,
 .group-blog .byline {
@@ -918,4 +804,111 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+/*--------------------------------------------------------------
+## CSSSSSS
+--------------------------------------------------------------*/
+
+body {
+	background: white;
+}
+
+#page {
+	min-width: 1280px;
+}
+
+.container-inner {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+#content .container-inner {
+	display: flex;
+}
+
+#primary, #secondary {
+	background: white;
+}
+
+#primary {
+	width: 80%;
+}
+
+#secondary {
+	width: 20%;
+	background: yellow;
+}
+
+#masthead {
+	background: #0A344C;
+	padding-top: 1em;
+}
+
+#menu-top {
+	background: #006B99;
+	display: block;
+}
+
+#colophon {
+	background: #06152E;
+}
+
+#banner-logo {
+	display: block;
+	width: 400px;
+	image-rendering: auto;
+}
+
+#primary-menu {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+}
+
+#primary-menu li {
+	padding: 0.9em 1.1em;
+}
+
+#primary-menu li a {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 0.9em;
+	font-weight: 500;
+	color: white;
+}
+
+@media screen and (max-width: 1280px) {
+	#primary-menu {
+		justify-content: flex-start;
+	}
+}
+
+.single-post-full .entry-title {
+	font-family: Roboto Slab;
+	text-align: center;
+	font-size: 3em;
+	margin: 0;
+}
+
+.single-post-full {
+	width: 100% !important;
+	margin-top: -4em;
+	border: 1px solid #F2F2F2;
+}
+
+.single-post-full .entry-content {
+	background: #F2F2F2;
+}
+
+.entry-meta .avatar {
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+
+.content-background {
+	height: 18em;
+	background-position: center center !important;
+	background-size: cover !important;
 }

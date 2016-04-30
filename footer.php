@@ -11,14 +11,16 @@
 
 ?>
 
+	</div><!-- #content-inner -->
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'detendus' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'detendus' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'detendus' ), 'detendus', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
+		<div class="container-inner">
+			<div class="site-info">
+				<p>Site réalisé avec amour <3.</p>
+				<p>Détendus du pad (c) depuis 2003.</p>
+			</div><!-- .site-info -->
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

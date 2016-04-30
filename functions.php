@@ -150,3 +150,12 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/***** DESACTIVER LES COMMENTAIRES ******/
+add_filter('comments_open', 'wpc_comments_closed', 10, 2);
+
+function wpc_comments_closed( $open, $post_id ) {
+$post = get_post( $post_id );
+$open = false;
+return $open;
+}
