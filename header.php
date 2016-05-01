@@ -46,16 +46,18 @@
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 		$image = $image[0];
 		$size = getimagesize($image);
+		$classContentBg = "content-background";
+		$imageDefaut = 'style="background: #006B99 url(/wordpress/wp-content/themes/wp-detendus-theme/img/bg-article.png);"';
 
 			if ($size[1] > 1920 || $size[0] > 1080) :
-				$image_url = 'url(' . $image . ')';
+				$image_url = 'style="background: url(' . $image . ') no-repeat center;"';
 			else :
-				$image_url = "#F37B49";
+				$classContentBg = "content-bg-defaut";
 			endif;
 		
 		else :
-			$image_url = "#F37B49";
+			$classContentBg = "content-bg-defaut";
 		endif; ?>
-			<div class="content-background" style="background: <?php echo $image_url; ?>;"></div>
+			<div class="<?php echo $classContentBg; ?>" <?php echo $image_url; ?>></div>
 		<?php endif; ?>
 				<div class="container-inner">

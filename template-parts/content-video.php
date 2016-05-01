@@ -10,6 +10,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
+	<?php
+		$class_entry_thumbnail = "entry-thumbnail";
+		if ( has_post_thumbnail() ) {
+			$post_thumb_videos = 'style="background: url(' . get_the_post_thumbnail_url() . ');"';
+		} else {
+			// $post_thumb_videos = "/wordpress/wp-content/themes/wp-detendus-theme/img/bg-article.png";
+			$class_entry_thumbnail = "entry-thumbnail-defaut";
+		}
+	
+	?>
+
+
+
+	<div class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>></div>
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
@@ -20,27 +35,10 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php detendus_posted_on(); ?>
+			<?php detendus_posted_videos(); ?>
+			
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'detendus' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'detendus' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-	<footer class="entry-footer">
-		<?php detendus_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

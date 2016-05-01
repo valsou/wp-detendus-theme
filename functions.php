@@ -159,3 +159,5 @@ $post = get_post( $post_id );
 $open = false;
 return $open;
 }
+
+/********** FONCTION POUR MAX POSTS DANS VIDEOS ********/
