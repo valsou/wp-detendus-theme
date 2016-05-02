@@ -49,6 +49,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 html {
 	font-family: 'Roboto';
+	font-size: 100%;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 	-webkit-font-smoothing: antialiased !important;
@@ -816,7 +817,7 @@ body {
 }
 
 .container-inner {
-	width: 79.53125%; /* 1018 / 1280 px */
+	width: 79.53125% !important; /* 1018 / 1280 px */
 	margin: 0 auto;
 }
 
@@ -980,20 +981,49 @@ iframe {
 	width: 100%;
 }
 
-@media (max-width: 640px) {
-  #content .container-inner {
-	flex-direction: column;
-	width: 100% !important;
-  }
-   #primary {
-	width: 100% !important;
-  }
-   #secondary {
-	width: 100% !important;
-  }
+@media (max-width: 800px) {
+	.menu-toggle {
+		display: block !important;
+		padding: 0.5rem 0;
+		cursor: pointer;
+		text-align: right;
+	}
+	
+	.menu-toggle .fa {
+		width: 100%;
+		display: block;
+		color: white;
+		font-size: 1.5rem;
+	}
+	
+	.menu-menu-top-container {
+		display: none;
+	}
+		
+	#primary-menu li {
+		padding: 0;
+		border-top: 1px solid white;
+	}
+	
 	#primary-menu {
+		padding: 0;
 		flex-direction: column;
 	}
+}
+
+@media (min-width:400px) and (max-width: 800px) {
+	#content .container-inner {
+	flex-direction: row;
+	width: 100% !important;
+	}
+	#primary {
+	width: 100% !important;
+	}
+	#secondary {
+		display: none;
+		width: 100%;
+	}
+
 	.content-background {
 		height: 5rem;
 	}
@@ -1006,21 +1036,44 @@ iframe {
 		margin: 0 !important;
 		margin-bottom: 1rem !important;
 	}
-}
-
-@media (max-width: 1100px) {
 	
+	.sidebar-toggle {
+		display: block !important;
+		background: #DE4B3D;
+		padding: 0.5rem 1rem;
+		cursor: pointer;
+	}
+	
+	.sidebar-toggle .fa {
+		width: 100%;
+		display: block;
+		color: white;
+		font-size: 2rem;
+	}
+	
+	/******** SECONDARY MOBILE/TABLETTE *********/
 }
 
-@media (min-width: 640px) {
+@media (max-width: 400px) {
+	#content .container-inner {
+		flex-direction: column;
+		width: 100% !important;
+	}
+	
+	#primary, #secondary {
+	width: 100% !important;
+	}
+	
+	.container-videos article {
+		width: 100% !important;
+		margin: 0 !important;
+		margin-bottom: 1rem !important;
+	}
 
-}
-
-@media (min-width:960px) {
-
-}
-
-@media (min-width:1100px) {
+	
+	.sidebar-toggle {
+		display: none;
+	}
 
 }
 
@@ -1030,7 +1083,7 @@ iframe {
 }
 
 .container-videos .entry-header {
-	padding: 1rem 1rem 0 1rem;
+	padding: 2rem 1rem 0 1rem;
 }
 
 .container-videos article{
@@ -1045,6 +1098,7 @@ iframe {
 
 .container-videos article .entry-title {
 	text-align: left;
+	line-height: 1.5rem;
 }
 
 .container-videos .entry-footer p {
@@ -1076,7 +1130,6 @@ iframe {
 	font-weight: 300;
 	color: rgba(0,0,0,0.6);
 	text-align: left;
-	padding-bottom: 1rem;
 	margin: 0;
 }
 
@@ -1084,6 +1137,73 @@ iframe {
 	display: block;
 }
 
+.container-videos .avatar {
+	border-radius: 50%;
+	background: white;
+	margin-left: 50%;
+	margin-bottom: -6rem;
+}
 .widget-recent-entries ul li a {
 	word-wrap: break-word;
 }
+
+/*****************************************************/
+/****              SIDEBAR WIDGETS              ******/
+/****************************************************/
+
+.sidebar-toggle, .menu-toggle {
+	display: none;
+}
+
+
+/*****************************************************/
+
+
+/*****************************************************/
+/****      SIDEBAR FORMULAIRE RECHERCHE        ******/
+/****************************************************/
+
+#secondary .search-form {
+	width: 100%;
+	height: 3rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	wrap: nowrap;
+	margin-bottom: 1rem;
+}
+
+#secondary .search-form label {
+	width: 80%;
+	
+}
+
+#secondary .search-form .fa-search {
+	color: white;
+}
+
+#secondary .search-form button {
+	width: 20%;
+	background: #0A344C;
+	border-radius: 0;
+	box-shadow: none;
+	text-shadow: none;
+	font-size: 1rem;
+	padding: 0;
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+}
+
+#secondary .search-form input {
+	width: 100%;
+	height: 100%;
+	padding: 0.5rem;
+	border-top-left-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+}
+
+#secondary .search-form input, .search-form button {
+	border: none;
+}
+
+/****************************************************************/

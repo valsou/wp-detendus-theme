@@ -25,6 +25,21 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<script>
+	jQuery(document).ready(function() {
+		
+   	jQuery('.sidebar-toggle').click(function() {
+   		jQuery('#secondary').toggle();
+		jQuery('#primary').toggle();
+		jQuery('.sidebar-icon-toggle.fa-angle-double-left').toggleClass('fa-angle-double-right');
+   		return false;
+   	});
+	
+	jQuery('.menu-toggle').click(function() {
+   		jQuery('.menu-menu-top-container').slideToggle(400);
+   		return false;
+   	});
+});
+	</script>
 </body>
 </html>

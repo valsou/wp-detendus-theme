@@ -16,7 +16,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+<?php wp_enqueue_script('jquery'); ?>
 <?php wp_head(); ?>
 <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700|Roboto+Slab:100,300,400,700" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -31,11 +31,12 @@
 			<img src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" id="banner-logo" />
 		</div>
 	<div id="menu-top">
-		<div class="container-inner">
+	
 			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<a class="menu-toggle" title="Dérouler menu"><i class="menu-icon-toggle fa fa-bars" aria-hidden="true"></i></a>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
-		</div>
+
 	</div>
 	</header><!-- #masthead -->
 		

@@ -24,7 +24,7 @@
 
 
 
-	<div class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>></div>
+	<div class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>><?php echo get_avatar( get_the_author_email(), '60' ); ?></div>
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
@@ -38,7 +38,7 @@
 			<?php detendus_posted_videos(); ?>
 			
 		</div><!-- .entry-meta -->
-		<?php
+		<?php 
 		endif; ?>
 	</header><!-- .entry-header -->
 </article><!-- #post-## -->
