@@ -163,11 +163,10 @@ return $open;
 /********** FONCTION POUR MAX POSTS DANS VIDEOS ********/
 
 
-add_filter( 'nav_menu_link_attributes', 'wpse_100726_extra_atts', 10, 3 );
-
-function wpse_100726_extra_atts( $atts, $item, $args )
-{
-    // inspect $item, then …
-    $atts['custom'] = 'some value';
-    return $atts;
-}
+function excerpt($num) {
+        $limit = $num+1;
+        $excerpt = explode(' ', get_the_excerpt(), $limit);
+        array_pop($excerpt);
+        $excerpt = implode(" ",$excerpt)."... (<a href='" .get_permalink($post->ID) ." '>Read more</a>)";
+        echo $excerpt;
+    }

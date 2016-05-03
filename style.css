@@ -1085,6 +1085,7 @@ iframe {
 .container-videos {
 	display: flex;
 	flex-wrap: wrap;
+	flex-direction: row;
 }
 
 .container-videos .entry-header {
@@ -1092,22 +1093,22 @@ iframe {
 }
 
 .container-videos .article-container {
+	display: flex;
 	width: calc(100% * (1/4));
-	padding: 0.5rem;
+	padding: 1rem;
+}
+
+.container-videos .entry-content {
+
 }
 
 .container-videos article {
 	background: white;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: stretch;
-	height: 100%;
+	width: 100%;
 }
 
 .container-videos .article-container:nth-child(1),
-.container-videos .article-container:nth-child(6),
-.container-videos .article-container:nth-child(7) {
+.container-videos .article-container:nth-child(6) {
 	width: calc(100% * (2/4));
 }
 
@@ -1121,7 +1122,7 @@ iframe {
 
 .container-videos .article-container .entry-title {
 	text-align: left;
-	line-height: 1.5rem;
+	line-height: 1.8rem;
 }
 
 .container-videos .entry-footer p {
@@ -1138,14 +1139,30 @@ iframe {
 }
 
 .container-videos .entry-thumbnail {
-	height: auto;
-	height: 60%;
+	display: block;
+	height: 10rem;
 	background-size: cover !important;
+	background-position: center center, center center !important;
+	background-repeat: no-repeat, repeat !important;
+	background-size: 30% 30%, cover !important;
+	opacity: 1;
+	transition: all 0.3s linear;
 }
 
 .container-videos .entry-thumbnail-defaut {
-	
-	background: #DE4B3D url(/wordpress/wp-content/themes/wp-detendus-theme/img/bg-article.png);
+	display: block;
+	height: 10rem;
+	background-color: #DE4B3D;
+	background-image: url(/wordpress/wp-content/themes/wp-detendus-theme/img/icons/play-circle.svg), url(/wordpress/wp-content/themes/wp-detendus-theme/img/bg-article.png);
+	background-position: center center, center center;
+	background-repeat: no-repeat, repeat;
+	background-size: 30% 30%, auto;
+	opacity: 1;
+	transition: all 0.3s linear;
+}
+
+.container-videos .entry-thumbnail-defaut:hover, .container-videos .entry-thumbnail:hover {
+	opacity: 0.7;
 }
 
 .container-videos .entry-meta {

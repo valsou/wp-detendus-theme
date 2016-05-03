@@ -15,7 +15,7 @@
 	<?php
 		$class_entry_thumbnail = "entry-thumbnail";
 		if ( has_post_thumbnail() ) {
-			$post_thumb_videos = 'style="background: url(' . get_the_post_thumbnail_url() . ');"';
+			$post_thumb_videos = 'style="background: url(/wordpress/wp-content/themes/wp-detendus-theme/img/icons/play-circle.svg), url(' . get_the_post_thumbnail_url() . ');"';
 		} else {
 			// $post_thumb_videos = "/wordpress/wp-content/themes/wp-detendus-theme/img/bg-article.png";
 			$class_entry_thumbnail = "entry-thumbnail-defaut";
@@ -25,7 +25,7 @@
 
 
 
-	<div class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>></div>
+	<a href="<?php get_permalink($post->ID); ?>" class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>></a>
 	<header class="entry-header">
 		<?php get_the_category(); ?>
 		<?php
@@ -40,7 +40,8 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 	<div class="entry-content">
-		<?php the_excerpt(); ?>
+		<?php excerpt(40); ?>
+		<?php echo $permalink; ?>
 	</div>
 	<div class="entry-meta">
 		<?php detendus_posted_videos(); ?>
