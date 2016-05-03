@@ -13,7 +13,7 @@ get_header(); ?>
 
 		<?php
 		global $query_string;
-		query_posts("{$query_string}&posts_per_page=9");
+		query_posts("{$query_string}&posts_per_page=6");
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">

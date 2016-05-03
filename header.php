@@ -19,10 +19,15 @@
 <?php wp_enqueue_script('jquery'); ?>
 <?php wp_head(); ?>
 <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700|Roboto+Slab:100,300,400,700" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 </head>
 
 <body <?php body_class(); ?>>
+
+
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'detendus' ); ?></a>
 
@@ -38,6 +43,7 @@
 			</nav><!-- #site-navigation -->
 
 	</div>
+	
 	</header><!-- #masthead -->
 		
 	<div id="content" class="site-content">

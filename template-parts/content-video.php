@@ -9,6 +9,7 @@
 
 ?>
 
+<div class="article-container">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	<?php
@@ -24,8 +25,9 @@
 
 
 
-	<div class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>><?php echo get_avatar( get_the_author_email(), '60' ); ?></div>
+	<div class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>></div>
 	<header class="entry-header">
+		<?php get_the_category(); ?>
 		<?php
 			if ( is_single() ) {
 				the_title( '<h1 class="entry-title">', '</h1>' );
@@ -34,11 +36,15 @@
 			}
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php detendus_posted_videos(); ?>
-			
-		</div><!-- .entry-meta -->
 		<?php 
 		endif; ?>
 	</header><!-- .entry-header -->
+	<div class="entry-content">
+		<?php the_excerpt(); ?>
+	</div>
+	<div class="entry-meta">
+		<?php detendus_posted_videos(); ?>
+		
+	</div><!-- .entry-meta -->
 </article><!-- #post-## -->
+</div>

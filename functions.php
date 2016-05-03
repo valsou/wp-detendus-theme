@@ -161,3 +161,13 @@ return $open;
 }
 
 /********** FONCTION POUR MAX POSTS DANS VIDEOS ********/
+
+
+add_filter( 'nav_menu_link_attributes', 'wpse_100726_extra_atts', 10, 3 );
+
+function wpse_100726_extra_atts( $atts, $item, $args )
+{
+    // inspect $item, then …
+    $atts['custom'] = 'some value';
+    return $atts;
+}
