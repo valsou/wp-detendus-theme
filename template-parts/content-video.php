@@ -40,8 +40,10 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 	<div class="entry-content">
-		<?php excerpt(40); ?>
-		<?php echo $permalink; ?>
+		<?php if ( has_excerpt( $post->ID ) ) {
+			excerpt();
+		}
+		?>
 	</div>
 	<div class="entry-meta">
 		<?php detendus_posted_videos(); ?>

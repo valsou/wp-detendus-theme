@@ -838,17 +838,17 @@ body {
 
 #secondary .widget-title {
 	text-transform: uppercase;
-	font-size: 1em;
-	color: #90A4AE;
-	text-align: center;
-	border-bottom: 1px solid #90A4AE;
+	font-size: 1.2em;
+	font-weight: 500;
+	text-align: left;
 	margin: 0;
-	padding: 1rem;
+}
+
+#secondary .sidebar-discord {
+	padding: 0 1rem;
 }
 
 #secondary .widget {
-	background: white;
-	border: 1px solid #90A4AE;
 	padding: 1rem;
 }
 
@@ -1078,6 +1078,7 @@ iframe {
 
 }
 
+
 /*****************************************************/
 /****              VIDEOS CARDS (IN CATEGROY)             ******/
 /****************************************************/
@@ -1095,7 +1096,7 @@ iframe {
 .container-videos .article-container {
 	display: flex;
 	width: calc(100% * (1/4));
-	padding: 1rem;
+	padding: 0 0 1rem 1rem;
 }
 
 .container-videos .entry-content {
@@ -1144,7 +1145,7 @@ iframe {
 	background-size: cover !important;
 	background-position: center center, center center !important;
 	background-repeat: no-repeat, repeat !important;
-	background-size: 30% 30%, cover !important;
+	background-size: 3rem 3rem, cover !important;
 	opacity: 1;
 	transition: all 0.3s linear;
 }
@@ -1156,7 +1157,7 @@ iframe {
 	background-image: url(/wordpress/wp-content/themes/wp-detendus-theme/img/icons/play-circle.svg), url(/wordpress/wp-content/themes/wp-detendus-theme/img/bg-article.png);
 	background-position: center center, center center;
 	background-repeat: no-repeat, repeat;
-	background-size: 30% 30%, auto;
+	background-size: 3rem 3rem, auto;
 	opacity: 1;
 	transition: all 0.3s linear;
 }
@@ -1223,7 +1224,7 @@ iframe {
 
 #secondary .search-form button {
 	width: 20%;
-	background: #0A344C;
+	background: #DE4B3D;
 	border-radius: 0;
 	box-shadow: none;
 	text-shadow: none;
@@ -1231,6 +1232,16 @@ iframe {
 	padding: 0;
 	border-top-right-radius: 0.5rem;
 	border-bottom-right-radius: 0.5rem;
+}
+
+#secondary .search-form button img {
+	width: 1rem;
+	transform: rotate(0);
+	transition: 0.2s all linear;
+}
+
+#secondary .search-form button:hover img {
+	transform: rotate(360deg);
 }
 
 #secondary .search-form input {

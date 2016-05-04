@@ -162,11 +162,15 @@ return $open;
 
 /********** FONCTION POUR MAX POSTS DANS VIDEOS ********/
 
-
-function excerpt($num) {
-        $limit = $num+1;
-        $excerpt = explode(' ', get_the_excerpt(), $limit);
+    function excerpt($limit=25) {
+      $excerpt = explode(' ', get_the_excerpt(), $limit);
+      if (count($excerpt)>=$limit) {
         array_pop($excerpt);
-        $excerpt = implode(" ",$excerpt)."... (<a href='" .get_permalink($post->ID) ." '>Read more</a>)";
-        echo $excerpt;
+        $excerpt = implode(" ",$excerpt).'...';
+      } else {
+        $excerpt = implode(" ",$excerpt);
+      }	
+      $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+      echo $excerpt.' <a href="' . get_the_permalink() . '" title="' . the_title() . '">Lire la suite</a>';
+	  return;
     }
