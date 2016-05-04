@@ -986,7 +986,7 @@ iframe {
 	width: 100%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 719px) {
 	.menu-toggle {
 		display: block !important;
 		padding: 0.5rem 0;
@@ -1031,7 +1031,7 @@ iframe {
 	}
 }
 
-@media (min-width:400px) and (max-width: 800px) {
+@media (min-width:479px) and (max-width: 719px) {
 	#content .container-inner {
 	flex-direction: row;
 	width: 100% !important;
@@ -1068,7 +1068,7 @@ iframe {
 
 
 
-@media (max-width: 400px) {
+@media (max-width: 479px) {
 	#content .container-inner {
 		flex-direction: column;
 		width: 100% !important;
