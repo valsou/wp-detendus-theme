@@ -17,7 +17,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container-inner">
 			<div class="site-info">
-				<p>Site réalisé avec amour <3.</p>
+				<p>Site réalisé avec amour <img src="/wordpress/wp-content/themes/wp-detendus-theme/img/icons/heart-r.svg" /></p>
 				<p>Détendus du pad (c) depuis 2003.</p>
 			</div><!-- .site-info -->
 		</div>
@@ -31,7 +31,7 @@
    	jQuery('.sidebar-toggle').click(function() {
    		jQuery('#secondary').toggle();
 		jQuery('#primary').toggle();
-		jQuery('.sidebar-icon-toggle.fa-angle-double-left').toggleClass('fa-angle-double-right');
+		jQuery('.sidebar-arrow-left').toggleClass('sidebar-arrow-right');
    		return false;
    	});
 	
@@ -39,6 +39,14 @@
    		jQuery('.menu-menu-top-container').slideToggle(400);
    		return false;
    	});
+	
+	jQuery(window).bind('scroll', function () {
+    if ($(window).scrollTop() > 50) {
+        jQuery('.menu').addClass('fixed');
+    } else {
+        jQuery('.menu').removeClass('fixed');
+    }
+});
 });
 	</script>
 </body>

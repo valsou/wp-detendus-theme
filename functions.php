@@ -171,6 +171,6 @@ return $open;
         $excerpt = implode(" ",$excerpt);
       }	
       $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
-      echo $excerpt.' <a href="' . get_the_permalink() . '" title="' . the_title() . '">Lire la suite</a>';
+      echo $excerpt.' <a href="' . get_the_permalink() . '" title="' . the_title() . '" class="entry-read">Lire la suite</a>';
 	  return;
     }

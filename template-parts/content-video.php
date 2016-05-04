@@ -7,6 +7,10 @@
  * @package detendus
  */
 
+$num_cards = array(2,4); // numéros de positions des cards sans excerpt
+
+$iterateur = get_query_var('iterateur');
+
 ?>
 
 <div class="article-container">
@@ -15,7 +19,7 @@
 	<?php
 		$class_entry_thumbnail = "entry-thumbnail";
 		if ( has_post_thumbnail() ) {
-			$post_thumb_videos = 'style="background: url(/wordpress/wp-content/themes/wp-detendus-theme/img/icons/play-circle.svg), url(' . get_the_post_thumbnail_url() . ');"';
+			$post_thumb_videos = 'style="background: url(' . get_the_post_thumbnail_url() . ');"';
 		} else {
 			// $post_thumb_videos = "/wordpress/wp-content/themes/wp-detendus-theme/img/bg-article.png";
 			$class_entry_thumbnail = "entry-thumbnail-defaut";
@@ -25,7 +29,7 @@
 
 
 
-	<a href="<?php get_permalink($post->ID); ?>" class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>></a>
+	<a href="<?php get_permalink($post->ID); ?>" class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>><img src="/wordpress/wp-content/themes/wp-detendus-theme/img/icons/play-circle-w.svg" /></a>
 	<header class="entry-header">
 		<?php get_the_category(); ?>
 		<?php
@@ -40,14 +44,13 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 	<div class="entry-content">
-		<?php if ( has_excerpt( $post->ID ) ) {
+		<?php if ( has_excerpt( $post->ID ) && !in_array($iterateur, $num_cards)) {
 			excerpt();
 		}
 		?>
 	</div>
 	<div class="entry-meta">
 		<?php detendus_posted_videos(); ?>
-		
 	</div><!-- .entry-meta -->
 </article><!-- #post-## -->
 </div>

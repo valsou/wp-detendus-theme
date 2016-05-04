@@ -18,9 +18,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_enqueue_script('jquery'); ?>
 <?php wp_head(); ?>
-<link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700|Roboto+Slab:100,300,400,700" rel="stylesheet" type="text/css">
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic,600italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body <?php body_class(); ?>>

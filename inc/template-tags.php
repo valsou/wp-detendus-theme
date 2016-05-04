@@ -132,7 +132,7 @@ if ( ! function_exists( 'detendus_posted_videos' ) ) :
  */
 function detendus_posted_videos() {
 	
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	$time_string = 'le <time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
