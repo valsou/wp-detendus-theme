@@ -24,11 +24,27 @@ $iterateur = get_query_var('iterateur');
 			// $post_thumb_videos = "/wordpress/wp-content/themes/wp-detendus-theme/img/bg-article.png";
 			$class_entry_thumbnail = "entry-thumbnail-defaut";
 		}
-	?>
 	
-	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>><img src="/wordpress/wp-content/themes/wp-detendus-theme/img/icons/play-circle-w.svg" /></a>
+	
+		/*** ON affiche l'icone de lecture que SI l'article est de la catégorie VIDEOS ***/
+		$img_thumb = "";
+	
+		$category = get_the_category(); 
+		$category_parent_id = $category[0]->category_parent;
+		if ( $category_parent_id != 0 ) {
+			$category_parent = get_term( $category_parent_id, 'category' );
+			$css_slug = $category_parent->slug;
+		} else {
+			$css_slug = $category[0]->slug;
+		}
+	
+		if ($css_slug == "videos") { $img_thumb = '<img src="/wordpress/wp-content/themes/wp-detendus-theme/img/icons/play-circle-w.svg" />'; }
+	
+	?>
+
+
+	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>><?php echo $img_thumb; ?></a>
 	<header class="entry-header">
-		<?php get_the_category(); ?>
 		<?php
 			if ( is_single() ) {
 				the_title( '<h1 class="entry-title">', '</h1>' );
@@ -40,6 +56,12 @@ $iterateur = get_query_var('iterateur');
 		<?php 
 		endif; ?>
 	</header><!-- .entry-header -->
+	<div class="entry-content">
+		<?php if ( has_excerpt( $post->ID ) && !in_array($iterateur, $num_cards)) {
+			excerpt();
+		}
+		?>
+	</div>
 	<div class="entry-meta">
 		<?php detendus_posted_videos(); ?>
 	</div><!-- .entry-meta -->

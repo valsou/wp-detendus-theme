@@ -45,7 +45,12 @@
    	});
 	
 	jQuery('.menu-toggle').click(function() {
-   		jQuery('.menu-menu-top-container').slideToggle(400);
+   		jQuery('.menu-menu-container').slideToggle(400);
+   		return false;
+   	});
+	
+	jQuery('.search-toggle').click(function() {
+   		jQuery('#search-top-toggle').slideToggle(400);
    		return false;
    	});
 	
@@ -56,7 +61,16 @@
         // jQuery('.menu').removeClass('fixed');
     // }
 	// });
+
+	
+	
 });
+
+
+	var easter_egg = new Konami();
+	easter_egg.code = function() { 
+		alert('Tu as gagné une boîte de paté ! Bravo. Bientôt il y aura un easter egg vraiment cool.'); }
+	easter_egg.load();
 	</script>
 </body>
 </html>

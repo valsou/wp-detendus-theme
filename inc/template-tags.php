@@ -74,7 +74,6 @@ function detendus_entry_footer() {
 		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'detendus' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 		echo '</span>';
 	}
-
 	
 }
 endif;
@@ -156,12 +155,14 @@ function detendus_posted_videos() {
 	edit_post_link(
 					sprintf(
 						/* translators: %s: Name of current post */
-						esc_html__( ' Modifier %s', 'detendus' ),
+						esc_html__( 'Modifier %s', 'detendus' ),
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 					),
 					'<span class="edit-link">',
 					'</span>'
 				);
+				
+	
 }
 endif;
 

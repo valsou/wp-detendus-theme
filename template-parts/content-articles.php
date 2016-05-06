@@ -29,7 +29,7 @@ $iterateur = get_query_var('iterateur');
 
 
 
-	<a href="<?php get_permalink($post->ID); ?>" class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>><img src="/wordpress/wp-content/themes/wp-detendus-theme/img/icons/play-circle-w.svg" /></a>
+	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>></a>
 	<header class="entry-header">
 		<?php get_the_category(); ?>
 		<?php

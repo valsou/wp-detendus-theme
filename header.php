@@ -19,6 +19,8 @@
 <?php wp_enqueue_script('jquery'); ?>
 <?php wp_head(); ?>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic,600italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="/wordpress/wp-content/themes/wp-detendus-theme/js/konami.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -35,8 +37,12 @@
 	<div id="menu-top">
 	
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<a class="menu-toggle" title="Dérouler menu"><i class="menu-icon-toggle fa fa-bars" aria-hidden="true"></i></a>
+				<div id="menu-top-toggle">
+					<a class="menu-toggle" title="Dérouler menu"><img src="/wordpress/wp-content/themes/wp-detendus-theme/img/icons/menu.svg" /></a>
+					<a class="search-toggle" title="Dérouler recherche"><img src="/wordpress/wp-content/themes/wp-detendus-theme/img/icons/magnifying-glass.svg" /></a>
+				</div>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+				<div id="search-top-toggle"><?php get_search_form(); ?></div>
 			</nav><!-- #site-navigation -->
 
 	</div>
@@ -44,24 +50,4 @@
 	</header><!-- #masthead -->
 		
 	<div id="content" class="site-content">
-		<?php if ( is_single() ) :
-		
-		if (has_post_thumbnail( $post->ID ) ):
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-		$image = $image[0];
-		$size = getimagesize($image);
-		$classContentBg = "content-background";
-		$imageDefaut = 'style="background: #006B99 url(/wordpress/wp-content/themes/wp-detendus-theme/img/bg-article.png);"';
-
-			if ($size[1] > 1920 || $size[0] > 1080) :
-				$image_url = 'style="background: url(' . $image . ') no-repeat center;"';
-			else :
-				$classContentBg = "content-bg-defaut";
-			endif;
-		
-		else :
-			$classContentBg = "content-bg-defaut";
-		endif; ?>
-			<div class="<?php echo $classContentBg; ?>" <?php echo $image_url; ?>></div>
-		<?php endif; ?>
 				<div class="container-inner">

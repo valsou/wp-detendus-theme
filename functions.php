@@ -160,7 +160,7 @@ $open = false;
 return $open;
 }
 
-/********** FONCTION POUR MAX POSTS DANS VIDEOS ********/
+
 
     function excerpt($limit=25) {
       $excerpt = explode(' ', get_the_excerpt(), $limit);

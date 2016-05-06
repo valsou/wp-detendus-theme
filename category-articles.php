@@ -16,7 +16,7 @@ get_header(); ?>
 		query_posts("{$query_string}&posts_per_page=6");
 		if ( have_posts() ) : ?>
 
-			<div class="container-videos">
+			<div class="container-articles">
 			<?php
 			/* Start the Loop */
 			

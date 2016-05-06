@@ -13,10 +13,10 @@ get_header(); ?>
 
 		<?php
 		global $query_string;
-		query_posts("{$query_string}&posts_per_page=6");
+		query_posts("{$query_string}&posts_per_page=8");
 		if ( have_posts() ) : ?>
 
-			<div class="container-videos">
+			<div class="container-articles cat-videos">
 			<?php
 			/* Start the Loop */
 			
