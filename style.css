@@ -975,7 +975,7 @@ h1.entry-title, h2.entry-title {
 
 .content-bg-defaut {
 	height: 10rem;
-	background: #006B99 url(/wordpress/wp-content/themes/wp-detendus-theme/img/bg-article.png);
+	background: #006B99 url(img/bg-article.png);
 }
 
 .entry-meta .byline a {
@@ -1031,14 +1031,14 @@ iframe {
 	}
 	
 	.sidebar-toggle.sidebar-arrow-left{
-		background: #DE4B3D url(/wordpress/wp-content/themes/wp-detendus-theme/img/icons/chevron-left-w.svg);
+		background: #DE4B3D url(img/icons/chevron-left-w.svg);
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: 50%;
 	}
 	
 	.sidebar-toggle.sidebar-arrow-right{
-		background: #DE4B3D url(/wordpress/wp-content/themes/wp-detendus-theme/img/icons/x-w.svg);
+		background: #DE4B3D url(img/icons/x-w.svg);
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: 50%;
@@ -1369,7 +1369,7 @@ iframe {
 .container-articles .entry-thumbnail-defaut {
 	height: 10rem;
 	background-color: #e6275d;
-	background-image: url(/wordpress/wp-content/themes/wp-detendus-theme/img/bg-videos.png);
+	background-image: url(img/bg-videos.png);
 	background-position: center center;
 	background-repeat: repeat;
 	background-size: auto;

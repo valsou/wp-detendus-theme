@@ -21,12 +21,12 @@ $iterateur = get_query_var('iterateur');
 		if ( has_post_thumbnail() ) {
 			$post_thumb_videos = 'style="background: url(' . get_the_post_thumbnail_url() . ');"';
 		} else {
-			// $post_thumb_videos = "/wordpress/wp-content/themes/wp-detendus-theme/img/bg-article.png";
 			$class_entry_thumbnail = "entry-thumbnail-defaut";
 		}
+
 	?>
 	
-	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>><img src="/wordpress/wp-content/themes/wp-detendus-theme/img/icons/play-circle-w.svg" /></a>
+	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="<?php echo $class_entry_thumbnail; ?>" <?php echo $post_thumb_videos; ?>><img src="<?php echo get_template_directory_uri (); ?>/img/icons/play-circle-w.svg" /></a>
 	<header class="entry-header">
 		<?php get_the_category(); ?>
 		<?php

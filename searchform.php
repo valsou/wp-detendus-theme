@@ -2,5 +2,5 @@
 	<label>
 		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'twentysixteen' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
 	</label>
-	<button type="submit" class="search-submit"><img class="icon-open" src="/wordpress/wp-content/themes/wp-detendus-theme/img/icons/magnifying-glass-w.svg" /></span></button>
+	<button type="submit" class="search-submit"><img class="icon-open" src="<?php echo get_template_directory_uri (); ?>/img/icons/magnifying-glass-w.svg" /></span></button>
 </form>

@@ -62,7 +62,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			);
 			
 			// Affichage par liste
-			echo '<article><div class="recent-cat cat-' . sanitize_title($cat) . '"><img title="' . $cat . '" src="/wordpress/wp-content/themes/wp-detendus-theme/img/icons/' . sanitize_title($cat) . '.svg" /></div><div class="recent-wrap-info"><span class="recent-title"><a href="' . get_permalink($recent["ID"]). '" title="' . $recent["post_title"] . '">' . $recent["post_title"] . '</a></span><span class="recent-author">' . get_the_author_meta( 'display_name', $recent["post_author"] ) . ' ' . $posted_on . '</span></div></article>';
+			echo '<article><div class="recent-cat cat-' . sanitize_title($cat) . '"><img title="' . $cat . '" src="' . get_template_directory_uri () . '/img/icons/' . sanitize_title($cat) . '.svg" /></div><div class="recent-wrap-info"><span class="recent-title"><a href="' . get_permalink($recent["ID"]). '" title="' . $recent["post_title"] . '">' . $recent["post_title"] . '</a></span><span class="recent-author">' . get_the_author_meta( 'display_name', $recent["post_author"] ) . ' ' . $posted_on . '</span></div></article>';
 			
 		} // end FOREACH
 		

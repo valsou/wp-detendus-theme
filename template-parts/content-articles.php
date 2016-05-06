@@ -21,7 +21,6 @@ $iterateur = get_query_var('iterateur');
 		if ( has_post_thumbnail() ) {
 			$post_thumb_videos = 'style="background: url(' . get_the_post_thumbnail_url() . ');"';
 		} else {
-			// $post_thumb_videos = "/wordpress/wp-content/themes/wp-detendus-theme/img/bg-article.png";
 			$class_entry_thumbnail = "entry-thumbnail-defaut";
 		}
 	

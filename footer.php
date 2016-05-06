@@ -16,7 +16,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container-inner">
-			<p>Site réalisé avec amour et tendresse. <img src="/wordpress/wp-content/themes/wp-detendus-theme/img/icons/heart-r.svg" /></p>
+			<p>Site réalisé avec amour et tendresse. <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/heart-r.svg" /></p>
 			<p>Détendus du pad (c) depuis 2003.</p>
 		</div>
 	</footer><!-- #colophon -->

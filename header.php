@@ -20,7 +20,7 @@
 <?php wp_head(); ?>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic,600italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="/wordpress/wp-content/themes/wp-detendus-theme/js/konami.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri (); ?>/js/konami.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -38,8 +38,8 @@
 	
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<div id="menu-top-toggle">
-					<a class="menu-toggle" title="Dérouler menu"><img src="/wordpress/wp-content/themes/wp-detendus-theme/img/icons/menu.svg" /></a>
-					<a class="search-toggle" title="Dérouler recherche"><img src="/wordpress/wp-content/themes/wp-detendus-theme/img/icons/magnifying-glass.svg" /></a>
+					<a class="menu-toggle" title="Dérouler menu"><img src="<?php echo get_template_directory_uri (); ?>/img/icons/menu.svg" /></a>
+					<a class="search-toggle" title="Dérouler recherche"><img src="<?php echo get_template_directory_uri (); ?>/img/icons/magnifying-glass.svg" /></a>
 				</div>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				<div id="search-top-toggle"><?php get_search_form(); ?></div>
