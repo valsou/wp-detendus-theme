@@ -25,14 +25,12 @@
 
 <body <?php body_class(); ?>>
 
-
-
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'detendus' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container-inner">
-			<img src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" id="banner-logo" />
+			<a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_template_directory_uri (); ?>/img/logo.png" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" id="banner-logo" /></a>
 		</div>
 	<div id="menu-top">
 	

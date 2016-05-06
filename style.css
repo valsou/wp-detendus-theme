@@ -983,6 +983,15 @@ h1.entry-title, h2.entry-title {
 	text-decoration: none;
 }
 
+.single .edit-link {
+	display: inline;
+	margin-left: 1rem;
+}
+
+.edit-link {
+	display: block;
+}
+
 .edit-link a {
 	text-decoration: none;
 	color: #DE4B3D;
@@ -990,7 +999,6 @@ h1.entry-title, h2.entry-title {
 	font-weight: 700;
 	border-radius: 0.2rem;
 	background: #f2f2f2;
-	margin-left: 1rem;
 }
 
 iframe {
@@ -1058,8 +1066,21 @@ iframe {
 	.container-articles .article-container:nth-child(5) {
 		width: calc(100% * (2/3)) !important;
 	}
+	
+	/** Catégorie Vidéos **/
+	/** Affichage des cartes vidéos **/	
+	.container-articles.cat-videos .article-container:nth-child(n) {
+		width: calc(100% * (1/2)) !important;
+	}
 
+}
 
+@media (max-width: 919px) {
+	/** Catégorie Vidéos **/
+	/** Affichage des cartes vidéos **/	
+	.container-articles.cat-videos .article-container:nth-child(n) {
+		width: 100% !important;
+	}
 }
 
 @media (min-width: 740px) and (max-width: 919px) {
@@ -1290,7 +1311,7 @@ iframe {
 /** Catégorie Vidéos **/
 /** Affichage des cartes vidéos **/
 .container-articles.cat-videos .article-container:nth-child(n) {
-	width: calc(100% * (1/4)) !important;
+	width: calc(100% * (1/4));
 }
 
 .container-articles.cat-videos .article-container:nth-child(n) .entry-thumbnail,

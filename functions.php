@@ -162,15 +162,21 @@ return $open;
 
 
 
-    function excerpt($limit=25) {
-      $excerpt = explode(' ', get_the_excerpt(), $limit);
-      if (count($excerpt)>=$limit) {
-        array_pop($excerpt);
-        $excerpt = implode(" ",$excerpt).'...';
-      } else {
-        $excerpt = implode(" ",$excerpt);
-      }	
-      $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
-      echo $excerpt.' <a href="' . get_the_permalink() . '" title="' . the_title() . '" class="entry-read">Lire la suite</a>';
-	  return;
+    function excerpt($charlength=255) {
+		$excerpt = get_the_excerpt();
+		$charlength++;
+
+		if ( mb_strlen( $excerpt ) > $charlength ) {
+			$subex = mb_substr( $excerpt, 0, $charlength - 5 );
+			$exwords = explode( ' ', $subex );
+			$excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+		if ( $excut < 0 ) {
+			echo mb_substr( $subex, 0, $excut );
+		} else {
+			echo $subex;
+		}
+			echo '... <a href="' . esc_url( get_permalink() ) . '" title="' . get_the_title() . '" class="entry-read">Lire la suite.</a>';
+		} else {
+			echo $excerpt;
+		}
     }
