@@ -1168,6 +1168,7 @@ iframe {
 	
 	#site-navigation .search-form label {
 		width: 100%;
+		height: 3rem;
 	}
 	
 	#site-navigation .search-form input {
@@ -1195,8 +1196,7 @@ iframe {
 		justify-content: space-between;
 	}
 	
-	.menu-menu-container,
-	.menu-menu-principal-container {
+	.wrap-menu-top {
 		display: none;
 		align-self: flex-end;
 	}

@@ -39,7 +39,7 @@
 					<a class="menu-toggle" title="Dérouler menu"><img src="<?php echo get_template_directory_uri (); ?>/img/icons/menu.svg" /></a>
 					<a class="search-toggle" title="Dérouler recherche"><img src="<?php echo get_template_directory_uri (); ?>/img/icons/magnifying-glass.svg" /></a>
 				</div>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class' => 'wrap-menu-top' ) ); ?>
 				<div id="search-top-toggle"><?php get_search_form(); ?></div>
 			</nav><!-- #site-navigation -->
 

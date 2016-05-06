@@ -45,7 +45,7 @@
    	});
 	
 	jQuery('.menu-toggle').click(function() {
-   		jQuery('.menu-menu-container').slideToggle(400);
+   		jQuery('.wrap-menu-top').slideToggle(400);
    		return false;
    	});
 	
