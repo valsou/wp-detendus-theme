@@ -1195,7 +1195,8 @@ iframe {
 		justify-content: space-between;
 	}
 	
-	.menu-menu-container {
+	.menu-menu-container,
+	.menu-menu-principal-container {
 		display: none;
 		align-self: flex-end;
 	}
