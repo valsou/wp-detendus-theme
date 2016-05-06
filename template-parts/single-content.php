@@ -34,6 +34,12 @@
 		</div>
 		<div class="entry-content">
 			<?php
+				if ( in_category('articles') ) {
+					the_post_thumbnail();
+				}
+			
+			
+			
 				the_content();
 			?>
 		</div><!-- .entry-content -->

@@ -6,8 +6,10 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<h1>Erreur 404. Ooooops.</h1>
-			<p>Il semblerait que vous essayez d'accéder à une page qui n'existe pas.</p>
+			<div class="error-page">
+				<h1>Erreur 404. Zut alors.</h1>
+				<p>Cette page n'existe pas. Elle n'existera jamais. Vous m'entendez ?! Jamais !</p>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

@@ -50,10 +50,10 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			$time_string = 'le <time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
 			$time_string = sprintf( $time_string,
-				esc_attr( get_the_date( 'c' ) ),
-				esc_html( get_the_date() ),
-				esc_attr( get_the_modified_date( 'c' ) ),
-				esc_html( get_the_modified_date() )
+				esc_attr( get_the_date( 'c' , $recent["ID"]) ),
+				esc_html( get_the_date( '', $recent["ID"]) ),
+				esc_attr( get_the_modified_date( 'c' , $recent["ID"]) ),
+				esc_html( get_the_modified_date( '', $recent["ID"]) )
 			);
 
 			$posted_on = sprintf(

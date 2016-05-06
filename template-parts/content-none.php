@@ -11,7 +11,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'detendus' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'On a essayé, mais on a rien trouvé...', 'detendus' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -22,7 +22,7 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'detendus' ); ?></p>
+			<p><?php esc_html_e( 'Le mot que tu as utilisé ne renvoie rien. Essaie avec un autre, on sait jamais.', 'detendus' ); ?></p>
 			<?php
 				get_search_form();
 

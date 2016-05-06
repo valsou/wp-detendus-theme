@@ -12,11 +12,9 @@ get_header(); ?>
 		query_posts("{$query_string}&posts_per_page=6");
 		if ( have_posts() ) : ?>
 
-			<div class="container-articles">
+			<div class="container-home">
 			<?php
 			/* Start the Loop */
-			
-			$iterateur = 1; // AFFICHAGE COMPLEXE DES CARDS
 			
 			while ( have_posts() ) : the_post();
 				
@@ -24,11 +22,10 @@ get_header(); ?>
 				 * Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				set_query_var( 'iterateur', $iterateur );		
+				 */	
 				
 				get_template_part( 'template-parts/content-home' );
-				$iterateur = $iterateur + 1;
+
 				
 			endwhile;
 

@@ -21,7 +21,7 @@
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-
+<a href="#" class="return-top"><img style="width:4rem;" src="<?php echo get_template_directory_uri (); ?>/img/icons/arrow-circle-top.svg" /></a>
 <?php wp_footer(); ?>
 <script>
 	jQuery(document).ready(function() {
@@ -62,7 +62,19 @@
     // }
 	// });
 
+	jQuery(window).scroll(function(){
+		if (jQuery(this).scrollTop() > 300) {
+			jQuery('.return-top').fadeIn();
+		} else {
+			jQuery('.return-top').fadeOut();
+		}
+	});
 	
+	//Click event to scroll to top
+	jQuery('.return-top').click(function(){
+		jQuery('html, body').animate({scrollTop : 0},800);
+		return false;
+	});
 	
 });
 
