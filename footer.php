@@ -17,7 +17,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container-inner">
 			<p>Site réalisé avec amour et tendresse. <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/heart-r.svg" /></p>
-			<p>Détendus du pad (c) depuis 2003.</p>
+			<p>Détendus du Pad depuis 2003.</p>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
@@ -74,10 +74,9 @@
 	jQuery('.return-top').click(function(){
 		jQuery('html, body').animate({scrollTop : 0},800);
 		return false;
+		});
+		
 	});
-	
-});
-
 
 	var easter_egg = new Konami();
 	easter_egg.code = function() { 
